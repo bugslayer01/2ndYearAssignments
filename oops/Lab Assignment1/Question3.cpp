@@ -21,7 +21,7 @@ int main() {
     // Multiplication
     int product = num1 * num2;
     std::cout << "Product: " << product << std::endl;
-    
+    s
     if (num2 != 0) {
         float quotient = static_cast<float>(num1) / num2;
         std::cout << "Quotient: " << quotient << std::endl;
