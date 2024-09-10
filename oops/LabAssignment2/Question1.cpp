@@ -1,53 +1,57 @@
 #include <iostream>
+#include <string>
 using namespace std;
+struct Student {
+    string name;
+    int rollNo;
+    string degree;
+    string hostel;
+    float currentCGPA;
 
-class Student {
-public:
-    // Defining a struct inside the class to hold contact details
-    struct ContactDetails {
-        string phoneNumber;
-        string address;
-    };
-
-    // Data members of the class
-    string Name;
-    int RollNo;
-    string Degree;
-    float CurrentCGPA;
-    ContactDetails contact;  // Struct as a data member inside the class
-
-    // Member function to add student details
-    void addDetails(string name, int rollNo, string degree, float cgpa, string phone, string addr) {
-        Name = name;
-        RollNo = rollNo;
-        Degree = degree;
-        CurrentCGPA = cgpa;
-        contact.phoneNumber = phone;
-        contact.address = addr;
+    void addDetails(string n, int r, string d, string h, float c) {
+        name = n;
+        rollNo = r;
+        degree = d;
+        hostel = h;
+        currentCGPA = c;
+    }
+    void updateDetails(string n, int r, string d, string h) {
+        name = n;
+        rollNo = r;
+        degree = d;
+        hostel = h;
     }
 
-    // Member function to display student details
+    void updateCGPA(float newCGPA) {
+        currentCGPA = newCGPA;
+    }
+
+    void updateHostel(string newHostel) {
+        hostel = newHostel;
+    }
+
     void displayDetails() {
-        cout << "Name: " << Name << endl;
-        cout << "Roll No: " << RollNo << endl;
-        cout << "Degree: " << Degree << endl;
-        cout << "Current CGPA: " << CurrentCGPA << endl;
-        cout << "Phone Number: " << contact.phoneNumber << endl;
-        cout << "Address: " << contact.address << endl;
+        cout << "Name: " << name << endl;
+        cout << "Roll No: " << rollNo << endl;
+        cout << "Degree: " << degree << endl;
+        cout << "Hostel: " << hostel << endl;
+        cout << "Current CGPA: " << currentCGPA << endl;
     }
 };
 
 int main() {
-    // Creating an instance of the class
     Student student1;
 
-    // Adding initial details using addDetails
-    student1.addDetails("John Doe", 101, "Computer Science", 8.5, "123-456-7890", "123 Main St");
+    student1.addDetails("Alice", 101, "B.Tech Computer Science", "Hostel A", 9.1);
 
-    // Displaying the details after adding
-    cout << "Student Details:" << endl;
+    cout << "Initial Details of Student 1:" << endl;
+    student1.displayDetails();
+    
+    student1.updateCGPA(9.3);
+    student1.updateHostel("Hostel B");
+
+    cout << "\nUpdated Details of Student 1:" << endl;
     student1.displayDetails();
 
     return 0;
 }
-
