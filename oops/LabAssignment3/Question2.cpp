@@ -16,6 +16,8 @@ public:
         cout << name << endl;
     }
     friend void swap(name1 &n1, name2 &n2); //not working if we do friend void swap(name1, name2)
+    //https://chatgpt.com/share/f6095c61-768c-49aa-979c-bd1b28107f8b
+    //
 };
 
 class name2
