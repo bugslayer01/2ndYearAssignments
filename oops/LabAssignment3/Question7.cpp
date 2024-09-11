@@ -20,7 +20,7 @@ int sumr(storage ob){
 int main(){
     storage ob;
     storage ob1;
-     ob.set(5, 10);   
+    ob.set(5, 10);   
     ob1.set(3, 7);
     sum(ob);
     ob1.sum=sumr(ob1);
