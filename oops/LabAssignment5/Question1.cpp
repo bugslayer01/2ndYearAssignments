@@ -11,13 +11,11 @@ public:
     Person(int a, string n);
     // declaring a friend function
     //  friend void display();
+    Person(int a, string n) : age(a), Name(n){}
     friend  void display(Person &pobj, Student &sobj);
 };
 // constructor for person
-Person::Person(int a, string n) : age(a), Name(n)
-{
-    cout << "constructor for Person called" << endl;
-}
+
 
 // inheritance
 

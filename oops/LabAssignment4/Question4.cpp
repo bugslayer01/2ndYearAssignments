@@ -40,7 +40,7 @@ int main() {
     Useless* obj = new Useless; 
 
     // array of objects
-    Useless2* obj1 = new Useless2[2]; 
+    Useless2* obj1 = new Useless2[5]; 
     
     // Cleanup
     delete p;
