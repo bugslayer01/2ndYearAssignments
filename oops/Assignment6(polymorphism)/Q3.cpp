@@ -1,43 +1,44 @@
 #include <iostream>
+using namespace std;
 
 class Base {
 public:
     virtual void show() {
-        std::cout << "Base class show function" << std::endl;
+        cout << "Base class show function" << endl;
     }
 };
 
 class Derived : public Base {
 public:
     void show() override {
-        std::cout << "Derived class show function" << std::endl;
+        cout << "Derived class show function" << endl;
     }
 };
 
 int main() {
 
-    std::cout << "Base *b = new Base();" << std::endl; // 1
+    cout << "Base *b = new Base();" << endl; // 1
     Base *b1 = new Base();
     b1->show();  
     delete b1;   
-    std::cout << std::endl;
+    cout << endl;
 
-    std::cout << "Base *b = new Derived();" << std::endl; // 2
+    cout << "Base *b = new Derived();" << endl; // 2
     Base *b2 = new Derived();
     b2->show();  
     delete b2; 
-    std::cout << std::endl;
+    cout << endl;
 
     // Derived *d = new Base();
-    // std::cout << "Derived *d = new Base(); (Invalid)" << std::endl; // 3
+    // cout << "Derived *d = new Base(); (Invalid)" << endl; // 3
     // Derived *d1 = new Base();
 
     // Case (iv): Derived *d = new Derived();
-    std::cout << "Derived *d = new Derived();" << std::endl; //4
+    cout << "Derived *d = new Derived();" << endl; //4
     Derived *d2 = new Derived();
     d2->show();  
     delete d2;   
-    std::cout << std::endl;
+    cout << endl;
 
     return 0;
 }
